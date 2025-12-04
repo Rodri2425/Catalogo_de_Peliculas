@@ -82,8 +82,9 @@ header p {
     margin-top: 0;
     font-family: 'Mountains of Christmas', cursive;
     font-size: 1.8rem;
-    color: #c0392b; /* Título en Rojo Navidad */
+    color: #c0392b; /* Titulo en color rojo Navidad */
     font-weight: bold;
+    text-align: center; /*texto alineado al centro */
 }
 
 .time {
