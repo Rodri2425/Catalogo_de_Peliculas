@@ -156,3 +156,29 @@ header p {
     0% { transform: rotate(-5deg); }
     100% { transform: rotate(5deg); }
 }
+
+
+
+/* Estilo para el botón de tráiler */
+.trailer-btn {
+    background-color: #ffeba7; /* Color dorado suave */
+    color: #800020; /* Color vino/rojo oscuro */
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.trailer-btn:hover {
+    background-color: #d4af37; /* Dorado más fuerte al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de levantamiento */
+}
+
+.trailer-btn:active {
+    transform: translateY(0); /* Vuelve al presionar */
+}
