@@ -66,7 +66,42 @@ function setupTrailerButtons() {
     });
 }
 
+// --- LÓGICA PARA LAS LUCES DEL BANNER DEL NACIMIENTO ---
+function crearLucesBanner() {
+    const container = document.getElementById('luces-fondo-container');
+    
+    // Si no existe el contenedor (por si acaso), no hacemos nada.
+    if (!container) return;
+
+    const cantidadLuces = 60; // ¡Puedes poner más si quieres más brillo!
+
+    for (let i = 0; i < cantidadLuces; i++) {
+        const luz = document.createElement('div');
+        luz.classList.add('luz-magica');
+
+        // Tamaño aleatorio para que no sean todas iguales (entre 2px y 5px)
+        const size = Math.random() * 3 + 2; 
+        luz.style.width = size + 'px';
+        luz.style.height = size + 'px';
+
+        // Posición aleatoria dentro del banner
+        luz.style.top = Math.random() * 100 + '%';
+        luz.style.left = Math.random() * 100 + '%';
+
+        // Retraso aleatorio para que parpadeen en momentos distintos
+        luz.style.animationDelay = Math.random() * 3 + 's';
+        // Duración aleatoria para que unas parpadeen más rápido que otras
+        luz.style.animationDuration = (Math.random() * 2 + 2) + 's';
+
+        container.appendChild(luz);
+    }
+}
+
 // 6. Aseguramos que la función se ejecute cuando el documento esté cargado
 // Si ya tienes un listener de DOMContentLoaded, simplemente llama a setupTrailerButtons() dentro de él.
 setupTrailerButtons();
+crearLucesBanner();
+
+
+
 });

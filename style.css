@@ -182,3 +182,141 @@ header p {
 .trailer-btn:active {
     transform: translateY(0); /* Vuelve al presionar */
 }
+
+
+
+
+
+
+/* --- SECCIÓN ESPECIAL: NACIMIENTO Y BIENVENIDA (Fondo Noche Mágica) --- */
+
+#banner-nacimiento {
+    position: relative; /* Necesario para contener las luces absolutas */
+    background-color: #0a0a0a; /* Fondo CASI negro */
+    /* Un degradado sutil para que no sea un negro plano y aburrido */
+    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Aumentamos el padding para que se vea más el fondo negro */
+    padding: 50px 20px;
+    margin-top: 0; /* Quitamos margen superior para pegarlo al header */
+    margin-bottom: 40px;
+    overflow: hidden; /* Que las luces no se salgan de esta caja */
+    border-bottom: 3px solid #d4af37; /* Separador dorado */
+}
+
+/* Asegura que la imagen y texto queden DELANTE de las luces */
+.contenido-frente {
+    position: relative;
+    z-index: 2;
+}
+
+/* El contenedor de las luces */
+#luces-fondo-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1; /* Detrás del contenido */
+}
+
+/* LA LUZ INDIVIDUAL */
+.luz-magica {
+    position: absolute;
+    background-color: #ffd700; /* Amarillo dorado */
+    border-radius: 50%; /* Redonda */
+    /* Sombra para que parezca que brilla */
+    box-shadow: 0 0 4px 1px rgba(255, 215, 0, 0.6);
+    /* Animación de parpadeo */
+    animation: parpadeoLuz 3s infinite ease-in-out;
+}
+
+/* Animación de encender y apagar suavemente */
+@keyframes parpadeoLuz {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); } /* Casi apagada y pequeña */
+    50% { opacity: 1; transform: scale(1.2); } /* Encendida y un poco más grande */
+}
+
+/* codigo nuevo para dar mas realce al nacimiento, aqui termina 
+
+
+
+
+
+/* El marco de la imagen */
+.marco-dorado {
+    padding: 10px;
+    background: linear-gradient(45deg, #b8860b, #ffd700, #b8860b); /* Gradiente dorado */
+    border-radius: 50%; /* Hace la imagen redonda (estilo camafeo) */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4); /* Resplandor exterior */
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* La imagen del nacimiento */
+.img-nacimiento {
+    width: 230px;
+    height: 230px;
+    object-fit: cover; /* Asegura que la foto se vea bien en el círculo */
+    border-radius: 50%;
+    border: 5px solid #fff; /* Borde blanco interno */
+}
+
+/* Contenedor del texto */
+.mensaje-bienvenida {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Texto Feliz Navidad con animación de luz */
+.texto-brillante {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 4rem;
+    margin: 0;
+    color: #fff;
+    /* Efecto de texto dorado mágico */
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00;
+    animation: latidoLuz 3s infinite ease-in-out;
+}
+
+.linea-decorativa {
+    height: 2px;
+    width: 150px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    margin: 10px auto;
+}
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+
+.footer-navideno {
+    background-color: #0b3d26; /* Mismo verde del header */
+    color: #ffd700; /* Texto dorado */
+    padding: 30px;
+    margin-top: 50px;
+    border-top: 4px solid #d4af37;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 2px #000;
+    position: relative;
+    z-index: 10; /* Para que quede por encima de todo */
+}
+
+/* --- ANIMACIONES --- */
+
+/* Hace que el banner aparezca desvaneciéndose al cargar */
+@keyframes aparecerSuave {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hace que el texto brille como una vela */
+@keyframes latidoLuz {
+    0%, 100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00; transform: scale(1); }
+    50% { text-shadow: 0 0 20px #ffd700, 0 0 40px #ff4500; transform: scale(1.05); }
+}
