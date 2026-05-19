@@ -1,322 +1,188 @@
-/* 1. Fondo Navideño */
-body {
-    /* Un rojo oscuro elegante (Vino) */
-    background-color: #800020; 
-    /* Patrón de nieve sutil (opcional, si no te gusta, borra la línea de abajo) */
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 40px 40px; 
-    
-    color: #ffffff;
-    font-family: 'Nunito', sans-serif; /* Letra fácil de leer */
+/* --- VARIABLES DE COLOR --- */
+:root {
+    --bg-dark: #0B1120;       /* Azul marino casi negro */
+    --card-bg: #1A2235;       /* Azul grisáceo oscuro para las tarjetas */
+    --text-main: #F3F4F6;     /* Blanco suave */
+    --text-muted: #9CA3AF;    /* Gris texto secundario */
+    --accent: #2563EB;        /* Azul eléctrico para botones */
+    --accent-hover: #3B82F6;  /* Azul más claro para hover */
+}
+
+/* --- RESET Y BASE --- */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
+    box-sizing: border-box;
 }
 
-/* 2. Encabezado Festivo */
-header {
-    background-color: #0b3d26; /* Verde Pino Oscuro */
-    padding: 30px;
-    border-bottom: 5px solid #d4af37; /* Borde Dorado */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
 }
 
-header h1 {
-    font-family: 'Mountains of Christmas', cursive; /* Fuente Navideña */
-    margin: 0;
-    font-size: 3.5rem;
-    color: #fff;
-    text-shadow: 2px 2px 4px #000; /* Sombra para que resalte */
-}
-
-header p {
-    font-size: 1.2rem;
-    color: #ffeba7; /* Un color crema suave */
-    font-style: italic;
-}
-
-/* 3. Contenedor */
-.cartelera-container {
+/* --- BARRA DE NAVEGACIÓN --- */
+.navbar {
+    background-color: rgba(11, 17, 32, 0.9);
+    padding: 15px 40px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 40px;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1f2937;
 }
 
-/* 4. Tarjeta Navideña */
-.movie-card {
-    background-color: #fff; /* Tarjeta blanca como la nieve */
-    color: #333; /* Texto oscuro para que se lea bien en fondo blanco */
-    border-radius: 15px;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+#buscador {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #374151;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    width: 250px;
+    outline: none;
+    transition: width 0.3s ease, border-color 0.3s;
+}
+
+#buscador:focus {
     width: 300px;
+    border-color: var(--accent);
+}
+
+/* --- BANNER (HERO) --- */
+.hero {
+    background: linear-gradient(to bottom, rgba(11, 17, 32, 0.2), var(--bg-dark)), 
+                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop') center/cover;
+    height: 40vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #D1D5DB;
+    max-width: 600px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* --- CONTENEDOR DE CARTELERA --- */
+.cartelera-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+/* --- TARJETAS DE PELÍCULAS --- */
+.movie-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
     overflow: hidden;
-    /* Borde doble: Rojo y Dorado */
-    border: 4px solid #c0392b; 
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); /* Resplandor dorado */
-    transition: transform 0.3s ease;
-    position: relative; /* Necesario para adornos extra */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .movie-card:hover {
-    transform: translateY(-10px); /* Flota hacia arriba */
-    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.6); /* Más brillo dorado */
-    cursor: pointer;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
-/* 5. Imagen */
+.img-wrapper {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
 .movie-img {
     width: 100%;
-    height: 400px;
+    height: 100%;
     object-fit: cover;
-    border-bottom: 4px solid #d4af37; /* Línea dorada separadora */
+    transition: transform 0.5s ease;
 }
 
-/* 6. Información */
+.movie-card:hover .movie-img {
+    transform: scale(1.05); /* Zoom sutil a la imagen */
+}
+
+/* --- INFORMACIÓN DE LA TARJETA --- */
 .movie-info {
     padding: 20px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
 }
 
 .movie-info h2 {
-    margin-top: 0;
-    font-family: 'Mountains of Christmas', cursive;
-    font-size: 1.8rem;
-    color: #c0392b; /* Titulo en color rojo Navidad */
-    font-weight: bold;
-    text-align: center; /*texto alineado al centro */
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
 }
 
 .time {
-    display: inline-block;
-    font-weight: bold;
-    color: #fff;
-    background-color: #27ae60; /* Fondo Verde Esmeralda */
-    margin-bottom: 10px;
-    padding: 5px 12px;
-    border-radius: 20px; /* Bordes muy redondos */
-    font-size: 0.9rem;
-    border: 1px solid #1e8449;
+    font-size: 0.85rem;
+    color: #9CA3AF;
+    margin-bottom: 15px;
+    display: block;
 }
 
 .description {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 líneas de texto */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
-
-/* --- EFECTO DE ESTRELLAS COLGANTES --- */
-
-/* 1. Aseguramos que el header permita elementos flotantes dentro */
-#header-navidad {
-    position: relative; /* Importante para que las estrellas no se salgan del header */
-    overflow: hidden;   /* Si la cuerda es muy larga, que no tape las películas */
-    z-index: 1;
-}
-
-/* 2. El contenedor de cada estrella individual */
-.star-wrapper {
-    position: absolute;
-    top: -200px; /* Empiezan escondidas arriba */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform-origin: top center; /* Para que se balanceen desde el techo */
-    /* Animación de entrada (caer) y luego balanceo infinito */
-    animation: caer 1.5s ease-out forwards, balanceo 3s ease-in-out infinite alternate;
-}
-
-/* 3. La cuerda */
-.cuerda {
-    width: 2px;
-    height: 100px; /* Largo de la cuerda */
-    background-color: rgba(255, 255, 255, 0.5); /* Color hilo plateado semi-transparente */
-}
-
-/* 4. La Estrella Celeste */
-.estrella {
-    font-size: 2rem; /* Tamaño de la estrella */
-    color: #87CEEB;  /* Color Celeste (SkyBlue) */
-    /* Efecto de brillo/resplandor */
-    text-shadow: 0 0 10px #fff, 0 0 20px #00ffff; 
-    margin-top: -5px; /* Para pegar la estrella a la cuerda */
-}
-
-/* --- ANIMACIONES --- */
-
-/* Animación para que bajen del techo */
-@keyframes caer {
-    0% { top: -200px; }
-    100% { top: -20px; } /* Ajusta esto si quieres que bajen más o menos */
-}
-
-/* Animación para que se muevan con el viento */
-@keyframes balanceo {
-    0% { transform: rotate(-5deg); }
-    100% { transform: rotate(5deg); }
-}
-
-
-
-/* Estilo para el botón de tráiler */
-.trailer-btn {
-    background-color: #ffeba7; /* Color dorado suave */
-    color: #800020; /* Color vino/rojo oscuro */
+/* --- BOTONES --- */
+.action-btn {
+    margin-top: auto; /* Mantiene el botón siempre abajo */
+    background-color: var(--accent);
+    color: white;
     border: none;
-    padding: 10px 20px;
-    margin-top: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-.trailer-btn:hover {
-    background-color: #d4af37; /* Dorado más fuerte al pasar el mouse */
-    transform: translateY(-2px); /* Pequeño efecto de levantamiento */
-}
-
-.trailer-btn:active {
-    transform: translateY(0); /* Vuelve al presionar */
-}
-
-
-
-
-
-
-/* --- SECCIÓN ESPECIAL: NACIMIENTO Y BIENVENIDA (Fondo Noche Mágica) --- */
-
-#banner-nacimiento {
-    position: relative; /* Necesario para contener las luces absolutas */
-    background-color: #0a0a0a; /* Fondo CASI negro */
-    /* Un degradado sutil para que no sea un negro plano y aburrido */
-    background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    /* Aumentamos el padding para que se vea más el fondo negro */
-    padding: 50px 20px;
-    margin-top: 0; /* Quitamos margen superior para pegarlo al header */
-    margin-bottom: 40px;
-    overflow: hidden; /* Que las luces no se salgan de esta caja */
-    border-bottom: 3px solid #d4af37; /* Separador dorado */
-}
-
-/* Asegura que la imagen y texto queden DELANTE de las luces */
-.contenido-frente {
-    position: relative;
-    z-index: 2;
-}
-
-/* El contenedor de las luces */
-#luces-fondo-container {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 1; /* Detrás del contenido */
-}
-
-/* LA LUZ INDIVIDUAL */
-.luz-magica {
-    position: absolute;
-    background-color: #ffd700; /* Amarillo dorado */
-    border-radius: 50%; /* Redonda */
-    /* Sombra para que parezca que brilla */
-    box-shadow: 0 0 4px 1px rgba(255, 215, 0, 0.6);
-    /* Animación de parpadeo */
-    animation: parpadeoLuz 3s infinite ease-in-out;
-}
-
-/* Animación de encender y apagar suavemente */
-@keyframes parpadeoLuz {
-    0%, 100% { opacity: 0.3; transform: scale(0.8); } /* Casi apagada y pequeña */
-    50% { opacity: 1; transform: scale(1.2); } /* Encendida y un poco más grande */
-}
-
-/* codigo nuevo para dar mas realce al nacimiento, aqui termina 
-
-
-
-
-
-/* El marco de la imagen */
-.marco-dorado {
-    padding: 10px;
-    background: linear-gradient(45deg, #b8860b, #ffd700, #b8860b); /* Gradiente dorado */
-    border-radius: 50%; /* Hace la imagen redonda (estilo camafeo) */
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4); /* Resplandor exterior */
-    width: 250px;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* La imagen del nacimiento */
-.img-nacimiento {
-    width: 230px;
-    height: 230px;
-    object-fit: cover; /* Asegura que la foto se vea bien en el círculo */
-    border-radius: 50%;
-    border: 5px solid #fff; /* Borde blanco interno */
-}
-
-/* Contenedor del texto */
-.mensaje-bienvenida {
-    margin-top: 20px;
     text-align: center;
+    text-decoration: none; /* Por si es un enlace 'a' */
+    transition: background-color 0.2s;
+    width: 100%;
 }
 
-/* Texto Feliz Navidad con animación de luz */
-.texto-brillante {
-    font-family: 'Mountains of Christmas', cursive;
-    font-size: 4rem;
-    margin: 0;
-    color: #fff;
-    /* Efecto de texto dorado mágico */
-    text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00;
-    animation: latidoLuz 3s infinite ease-in-out;
+.action-btn:hover {
+    background-color: var(--accent-hover);
 }
 
-.linea-decorativa {
-    height: 2px;
-    width: 150px;
-    background: linear-gradient(90deg, transparent, #fff, transparent);
-    margin: 10px auto;
-}
-
-/* --- PIE DE PÁGINA (FOOTER) --- */
-
-.footer-navideno {
-    background-color: #0b3d26; /* Mismo verde del header */
-    color: #ffd700; /* Texto dorado */
+/* --- FOOTER --- */
+footer {
+    text-align: center;
     padding: 30px;
-    margin-top: 50px;
-    border-top: 4px solid #d4af37;
-    font-family: 'Mountains of Christmas', cursive;
-    font-size: 1.8rem;
-    text-shadow: 1px 1px 2px #000;
-    position: relative;
-    z-index: 10; /* Para que quede por encima de todo */
-}
-
-/* --- ANIMACIONES --- */
-
-/* Hace que el banner aparezca desvaneciéndose al cargar */
-@keyframes aparecerSuave {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Hace que el texto brille como una vela */
-@keyframes latidoLuz {
-    0%, 100% { text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00; transform: scale(1); }
-    50% { text-shadow: 0 0 20px #ffd700, 0 0 40px #ff4500; transform: scale(1.05); }
+    color: var(--text-muted);
+    border-top: 1px solid #1f2937;
+    margin-top: 20px;
 }

@@ -1,257 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
-<!--
-Guardado por el momento
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cine Familiar</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <header>
-        <h1>🎬 Cartelera de Cine en Casa 🍿</h1>
-        <p>¡Bienvenidos a las funciones que disfrutaremos en vacaciones!</p>
-    </header>
-
-    -->
-
-
-<!--Nuevo titulo para temporada navidenia-->
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cine Navideño</title>
+    <title>Cine en Casa</title>
+    <!-- Fuente moderna tipo Netflix -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Nunito:wght@400;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="logo">🍿 Cine<span>Familiar</span></div>
+        <div class="search-container">
+            <input type="text" id="buscador" placeholder="Buscar película...">
+        </div>
+    </nav>
 
-   <header id="header-navidad">
-        <div id="stars-container"></div> 
-
-        <h1>🎄 Cartelera Navideña 🎅</h1> 
-        <p>Chocolate caliente, dulces y las mejores películas</p>
+    <!-- Banner Principal -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Especial Vacaciones de Interciclo</h1>
+            <p>Prepara los churros. Observa los horarios, acomódate y disfruta de la función.</p>
+        </div>
     </header>
 
-    <!--codigo para 24 dic-->
-    <section id="banner-nacimiento">
-    <div id="luces-fondo-container"></div>
+    <!-- Cartelera -->
+    <main>
+        <div class="cartelera-container" id="cartelera">
 
-    <div class="marco-dorado contenido-frente">
-        <img src="img/nacimiento.jpg" alt="Nacimiento del Niño Jesús" class="img-nacimiento">
-    </div>
-    <div class="mensaje-bienvenida contenido-frente">
-        <h2 class="texto-brillante">¡Feliz Navidad 2025!</h2>
-        <div class="linea-decorativa"></div>
-    </section>
-
-    <!--termina codigo para 24 dic-->
-
-    <script src="script.js?v=navidad2025"></script>
-
-
-
-    <script src="script.js"></script>  <!--nombre del js para acordarme-->
-
-
-
-    <div class="cartelera-container">
-
-
-
-
-        <div class="movie-card">
-            <img src="img/dragon_ball_super_temp1.jpg" alt="Dragon Ball Super Capitulo 26" class="movie-img">
-            <div class="movie-info">
-                <h2>Dragon Ball Super Capitulo 53</h2>
-                <span class="time">🕒 Cualquier dia - 0:00 PM</span>
-                <p class="description">Sorbet y Tagamo, antiguos miembros de élite del ejército de Freezer, llegan a la
-                    Tierra con la intención de utilizar las Bolas de Dragón para resucitar a su líder y llevar a cabo su
-                    venganza contra los Saiyajin. Para poder detenerlos y salvar al mundo, Goku y Vegeta tendrán que
-                    alcanzar el nivel de auténticos dioses.</p>
-                <a href="https://dbsullca.com/capitulos/dragon-ball-super-latino/12303" style="color: rgb(0, 149, 255)" ;>Ver capitulo 53</a>
-
-            </div>
-        </div>
-              
-  
-        
-        <div class="movie-card">
-            <img src="img/otro_viernes_de_locos.jfif" alt="Otro Viernes de Locos" class="movie-img">
-            <div class="movie-info">
-                <h2>Otro Viernes de Locos</h2>
-                <span class="time">🕒 Hoy - 5:30 PM</span>
-                <p class="description">Anna tiene una hija y está a punto de convertirse en madrastra de otra.
-                     Mientras se enfrentan a las innumerables complicaciones que trae consigo la unión de dos familias,
-                      Tess y Anna descubren que un rayo puede caer dos veces en el mismo sitio.</p>
-
-                    <button 
-                        class="trailer-btn" 
-                        data-trailer-url="https://youtu.be/97ExuMBIE8Y?si=jNbNKXCMZGm78xtk" 
-                        data-title="Super Mario Bros"
-                    >
-                        Ver Trailer 🍿
-        </button>
-            </div>
-        </div>
-
-   
-
-     
-
-       
-
-
-        <div class="movie-card">
-            <img src="img/mulan1.jpg" alt="Mulan1" class="movie-img">
-            <div class="movie-info">
-                <h2>Mulán</h2>
-                <span class="time">🕒 Hoy : 8:00 PM</span>
-                <p class="description">El ejército de los Hunos, encabezado por el malvado Shun Yiu,
-                     quiere conquistar China. El emperador obliga a todos los varones a alistarse 
-                     en el Ejército para proteger el imperio. Por otra parte, Mulán es una chica 
-                     joven y valiente que vive en una aldea. Su padre está enfermo pero a pesar de
-                      ello quiere luchar por su país. Mulán no lo va a consentir y se fugará de 
-                      casa con la intención de hacerse pasar por un chico y combatir en lugar de su
-                       padre.</p>
-            </div>
-        </div>
-
-        <!--
-          <div class="movie-card">
-            <img src="img/la_propuesta.jpg" alt="La Propuesta" class="movie-img">
-            <div class="movie-info">
-                <h2>La Propuesta</h2>
-                <span class="time">🕒 Mañana  - 8:00 PM</span>
-                <p class="description">Margaret, una famosa e influyente editora de Nueva York, 
-                    está a punto de ser deportada a Canadá. Para evitarlo, declara que está comprometida 
-                    con su ayudante Andrew. Él está dispuesto a participar en la farsa, pero imponiendo ciertas condiciones.</p>
-            </div>
-        </div>
-        -->
-
-
-        <div class="movie-card">
-            <img src="img/santa_clausula_2.jpg" alt="santa_clausula_2" class="movie-img">
-            <div class="movie-info">
-                <h2>Santa Clausula 2</h2>
-                <span class="time">🕒 Miercoles 24 : 8:00 AM</span>
-                <p class="description">Santa Claus debe casarse antes del día de Navidad si no quiere perder 
-                    su trabajo para siempre. Al mismo tiempo, tiene que ayudar a su hijo a salir de la lista 
-                    de traviesos en la que ha caído.</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="img/una_navidad_bien_prendida.jpg" alt="una_navidad_bien_prendida" class="movie-img">
-            <div class="movie-info">
-                <h2>Una Navidad bien Prendida</h2>
-                <span class="time">🕒 Miercoles 24 : 12:30 PM</span>
-                <p class="description">Steve (Matthew Broderick), un padre suburbano y un entusiasta de la Navidad,
-                     enfrenta un problema en su ordenada existencia ante la llegada de su nuevo vecino Danny (Danny 
-                     DeVito). Danny tiene grandes sueños y planea iluminar su casa con la suficiente cantidad de
-                      luces para que sea vista desde el espacio. Para no quedarse atrás, le declara la guerra a 
-                      Danny quien amenaza con hacer desaparecer el espíritu de la Navidad.</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="img/El_Regalo_Prometido.webp" alt="El_Regalo_Prometido" class="movie-img">
-            <div class="movie-info">
-                <h2>El Regalo Prometido</h2>
-                <span class="time">🕒 Miercoles 24 : 3:00 PM</span>
-                <p class="description">En plena Nochebuena, dos padres, un hombre de negocios con cargo de conciencia
-                     y un cartero, luchan por conseguir el juguete más popular de la temporada para sus hijos, pero 
-                     solo queda uno.</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="img/mickey_celebra_la_navidad.webp" alt="mickey_celebra_la_navidad" class="movie-img">
-            <div class="movie-info">
-                <h2>Mickey celebra la navidad</h2>
-                <span class="time">🕒 Jueves 25 : 2:00 AM</span>
-                <p class="description">Mickey, Minnie y sus amigos Goofy, Donald, Daisy y Pluto recuerdan juntos 
-                    las Navidades pasadas en estas tres maravillosas historias.</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="img/klaus.jpg" alt="klaus" class="movie-img">
-            <div class="movie-info">
-                <h2>Klaus</h2>
-                <span class="time">🕒 Jueves 25 : 9:00 AM</span>
-                <p class="description">Un cartero es enviado a una helada ciudad en el norte 
-                    y allí descubre que Santa Claus se está escondiendo.</p>
-            </div>
-        </div>
-
-         <div class="movie-card">
-            <img src="img/shaun_el_cordero_navidad.jpg" alt="shaun el shaun_el_cordero_navidad" class="movie-img">
-            <div class="movie-info">
-                <h2>shaun el cordero el vuelo antes de navidad</h2>
-                <span class="time">🕒 Jueves 25 : 11:00 AM</span>
-                <p class="description">Shaun se mete en problemas mientras se prepara para la Navidad y toda la
-                     granja termina embarcándose en una aventura completa con trineos.</p>
-            </div>
-        </div>
-
-        <div class="movie-card">
-            <img src="img/el_grinch.jpg" alt="el_grinch" class="movie-img">
-            <div class="movie-info">
-                <h2>El Grinch</h2>
-                <span class="time">🕒 Jueves 25 : 1:00 PM</span>
-                <p class="description">Basada en el clásico del Dr. Seuss, sobre un villano 
-                    que programa arruinar la Navidad para los residentes de Whoville.</p>
-            </div>
-        </div>
-
-         <div class="movie-card">
-            <img src="img/los_fantasmas_de_scrooge.jpg" alt="los_fantasmas_de_scrooge" class="movie-img">
-            <div class="movie-info">
-                <h2>Los fantasmas de Scrooge</h2>
-                <span class="time">🕒 Jueves 25 : 3:00 PM</span>
-                <p class="description">El miserable Ebenezer Scrooge recibe la visita de tres
-                     espíritus de la Navidad, quienes lo llevan a un viaje a través de su pasado, 
-                     presente y futuro.</p>
-            </div>
-        </div>
-
+            <!-- Película 1 -->
             <div class="movie-card">
-            <img src="img/el_señor_de_los_milagros.webp" alt="el_señor_de_los_milagros" class="movie-img">
-            <div class="movie-info">
-                <h2>El Señor de los Milagros</h2>
-                <span class="time">🕒 Jueves 25 : 7:00 PM</span>
-                <p class="description">Un niño relata acontecimientos de la vida de Jesús, como la resurrección 
-                    de Lázaro y la curación de María Magdalena.</p>
+                <div class="img-wrapper">
+                    <img src="img/dragon_ball_super_temp1.jpg" alt="Dragon Ball Super Capitulo 53" class="movie-img">
+                </div>
+                <div class="movie-info">
+                    <h2>Dragon Ball Super Cap 53</h2>
+                    <span class="time">🕒 Cualquier día - 0:00 PM</span>
+                    <p class="description">Sorbet y Tagamo, antiguos miembros de élite del ejército de Freezer, llegan a la Tierra con la intención de resucitar a su líder. Goku y Vegeta tendrán que alcanzar el nivel de auténticos dioses.</p>
+                    <a href="https://dbsullca.com/capitulos/dragon-ball-super-latino/12303" class="action-btn" target="_blank">▶ Ver capítulo</a>
+                </div>
             </div>
+
+            <!-- Película 2 -->
+            <div class="movie-card">
+                <div class="img-wrapper">
+                    <img src="img/otro_viernes_de_locos.jfif" alt="Otro Viernes de Locos" class="movie-img">
+                </div>
+                <div class="movie-info">
+                    <h2>Otro Viernes de Locos</h2>
+                    <span class="time">🕒 Hoy - 5:30 PM</span>
+                    <p class="description">Mientras se enfrentan a las complicaciones de la unión de dos familias, Tess y Anna descubren que un rayo puede caer dos veces en el mismo sitio.</p>
+                    <button class="action-btn trailer-btn" data-trailer-url="https://youtu.be/97ExuMBIE8Y?si=jNbNKXCMZGm78xtk" data-title="Otro Viernes de Locos">▶ Ver Trailer</button>
+                </div>
+            </div>
+
+            <!-- Película 3 -->
+            <div class="movie-card">
+                <div class="img-wrapper">
+                    <img src="img/mulan1.jpg" alt="Mulan" class="movie-img">
+                </div>
+                <div class="movie-info">
+                    <h2>Mulán</h2>
+                    <span class="time">🕒 Hoy - 8:00 PM</span>
+                    <p class="description">Mulán es una chica valiente que se fuga de casa para hacerse pasar por un chico y combatir en el ejército en lugar de su padre enfermo, protegiendo a China de los Hunos.</p>
+                    <button class="action-btn trailer-btn" data-trailer-url="https://www.youtube.com/watch?v=HKvI800Xb1M" data-title="Mulán">▶ Ver Trailer</button>
+                </div>
+            </div>
+
+            <!-- Película 4 -->
+            <div class="movie-card">
+                <div class="img-wrapper">
+                    <img src="img/santa_clausula_2.jpg" alt="Santa Clausula 2" class="movie-img">
+                </div>
+                <div class="movie-info">
+                    <h2>Santa Cláusula 2</h2>
+                    <span class="time">🕒 Miércoles 24 - 8:00 AM</span>
+                    <p class="description">Santa Claus debe casarse antes del día de Navidad si no quiere perder su trabajo para siempre, mientras ayuda a su hijo a salir de la lista de traviesos.</p>
+                    <button class="action-btn trailer-btn" data-trailer-url="https://www.youtube.com/watch?v=R9Xn9b_S9eU" data-title="Santa Clausula 2">▶ Ver Trailer</button>
+                </div>
+            </div>
+
+            <!-- Película 5 -->
+            <div class="movie-card">
+                <div class="img-wrapper">
+                    <img src="img/una_navidad_bien_prendida.jpg" alt="Una Navidad bien Prendida" class="movie-img">
+                </div>
+                <div class="movie-info">
+                    <h2>Una Navidad bien Prendida</h2>
+                    <span class="time">🕒 Miércoles 24 - 12:30 PM</span>
+                    <p class="description">Steve enfrenta un problema cuando su nuevo vecino Danny planea iluminar su casa para que sea vista desde el espacio. Le declara la guerra para no quedarse atrás.</p>
+                    <button class="action-btn trailer-btn" data-trailer-url="https://www.youtube.com/watch?v=R5UvK4FhJg8" data-title="Una Navidad bien Prendida">▶ Ver Trailer</button>
+                </div>
+            </div>
+
         </div>
+    </main>
 
-
-
-
-
-
-        
-
-
-    </div>
-
-    <!--memsaje al final de la pag-->
-    <footer class="footer-navideno">
-        <p>✨ Que el niño Dios nazca en sus corazones! - 2025 ✨</p>
+    <footer>
+        <p>Proyecto Cine Familiar | Vacaciones 2026</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
