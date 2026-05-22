@@ -3,43 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cine en Casa</title>
-    <!-- Fuente moderna tipo Netflix -->
+    <title>CineFamiliar 🎬</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+
     <!-- Barra de Navegación -->
     <nav class="navbar">
-        <div class="logo">🍿 Cine<span>Familiar</span></div>
+        <div class="logo">🎬 Cine<span>Familiar</span></div>
         <div class="search-container">
+            <span class="search-icon">🔍</span>
             <input type="text" id="buscador" placeholder="Buscar película...">
         </div>
     </nav>
 
     <!-- Banner Principal -->
     <header class="hero">
+        <div class="hero-lights">
+            <div class="light light-1"></div>
+            <div class="light light-2"></div>
+            <div class="light light-3"></div>
+        </div>
+        <div class="film-strip top"></div>
         <div class="hero-content">
-            <h1>Especial Vacaciones de Interciclo</h1>
-            <p>Prepara los churros. Observa los horarios, acomódate y disfruta de la función.</p>
+            <div class="hero-badge">✦ En cartelera ✦</div>
+            <h1>Especial Vacaciones<br><span>de Interciclo</span></h1>
+            <p>Prepara los churros. Observa los horarios,<br>acomódate y disfruta de la función.</p>
+            <div class="hero-decoration">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="film-strip bottom"></div>
+        <div class="scroll-hint">
+            <span>Ver cartelera</span>
+            <div class="scroll-arrow">↓</div>
         </div>
     </header>
 
     <!-- Cartelera -->
     <main>
+        <div class="section-title">
+            <div class="title-line"></div>
+            <h2>Cartelera</h2>
+            <div class="title-line"></div>
+        </div>
+
         <div class="cartelera-container" id="cartelera">
 
             <!-- Película 1 -->
             <div class="movie-card">
+                <div class="card-number">01</div>
                 <div class="img-wrapper">
-                    <img src="img/dragon_ball_super_temp1.jpg" alt="Dragon Ball Super Capitulo 53" class="movie-img">
+                    <img src="img/dragon_ball_super_temp1.jpg" alt="Dragon Ball Super Cap 76" class="movie-img">
+                    <div class="img-overlay">
+                        <div class="overlay-genre">Anime</div>
+                    </div>
                 </div>
                 <div class="movie-info">
-                    <h2>Dragon Ball Super Cap 53</h2>
-                    <span class="time">🕒 Cualquier día - 0:00 PM</span>
+                    <h2>Dragon Ball Super Cap 76</h2>
+                    <span class="time"><span class="time-icon">🕒</span> Cualquier día — <strong>Libre</strong></span>
                     <p class="description">Sorbet y Tagamo, antiguos miembros de élite del ejército de Freezer, llegan a la Tierra con la intención de resucitar a su líder. Goku y Vegeta tendrán que alcanzar el nivel de auténticos dioses.</p>
                     <a href="https://dbsullca.com/capitulos/dragon-ball-super-latino/12303" class="action-btn" target="_blank">▶ Ver capítulo</a>
                 </div>
@@ -47,12 +76,16 @@
 
             <!-- Película 2 -->
             <div class="movie-card">
+                <div class="card-number">02</div>
                 <div class="img-wrapper">
                     <img src="img/otro_viernes_de_locos.jfif" alt="Otro Viernes de Locos" class="movie-img">
+                    <div class="img-overlay">
+                        <div class="overlay-genre">Comedia</div>
+                    </div>
                 </div>
                 <div class="movie-info">
                     <h2>Otro Viernes de Locos</h2>
-                    <span class="time">🕒 Hoy - 5:30 PM</span>
+                    <span class="time"><span class="time-icon">🕒</span> Hoy — <strong>5:30 PM</strong></span>
                     <p class="description">Mientras se enfrentan a las complicaciones de la unión de dos familias, Tess y Anna descubren que un rayo puede caer dos veces en el mismo sitio.</p>
                     <button class="action-btn trailer-btn" data-trailer-url="https://youtu.be/97ExuMBIE8Y?si=jNbNKXCMZGm78xtk" data-title="Otro Viernes de Locos">▶ Ver Trailer</button>
                 </div>
@@ -60,12 +93,16 @@
 
             <!-- Película 3 -->
             <div class="movie-card">
+                <div class="card-number">03</div>
                 <div class="img-wrapper">
-                    <img src="img/mulan1.jpg" alt="Mulan" class="movie-img">
+                    <img src="img/mulan1.jpg" alt="Mulán" class="movie-img">
+                    <div class="img-overlay">
+                        <div class="overlay-genre">Aventura</div>
+                    </div>
                 </div>
                 <div class="movie-info">
                     <h2>Mulán</h2>
-                    <span class="time">🕒 Hoy - 8:00 PM</span>
+                    <span class="time"><span class="time-icon">🕒</span> Hoy — <strong>8:00 PM</strong></span>
                     <p class="description">Mulán es una chica valiente que se fuga de casa para hacerse pasar por un chico y combatir en el ejército en lugar de su padre enfermo, protegiendo a China de los Hunos.</p>
                     <button class="action-btn trailer-btn" data-trailer-url="https://www.youtube.com/watch?v=HKvI800Xb1M" data-title="Mulán">▶ Ver Trailer</button>
                 </div>
@@ -73,12 +110,16 @@
 
             <!-- Película 4 -->
             <div class="movie-card">
+                <div class="card-number">04</div>
                 <div class="img-wrapper">
-                    <img src="img/santa_clausula_2.jpg" alt="Santa Clausula 2" class="movie-img">
+                    <img src="img/santa_clausula_2.jpg" alt="Santa Cláusula 2" class="movie-img">
+                    <div class="img-overlay">
+                        <div class="overlay-genre">Navidad</div>
+                    </div>
                 </div>
                 <div class="movie-info">
                     <h2>Santa Cláusula 2</h2>
-                    <span class="time">🕒 Miércoles 24 - 8:00 AM</span>
+                    <span class="time"><span class="time-icon">🕒</span> Miércoles 24 — <strong>8:00 AM</strong></span>
                     <p class="description">Santa Claus debe casarse antes del día de Navidad si no quiere perder su trabajo para siempre, mientras ayuda a su hijo a salir de la lista de traviesos.</p>
                     <button class="action-btn trailer-btn" data-trailer-url="https://www.youtube.com/watch?v=R9Xn9b_S9eU" data-title="Santa Clausula 2">▶ Ver Trailer</button>
                 </div>
@@ -86,12 +127,16 @@
 
             <!-- Película 5 -->
             <div class="movie-card">
+                <div class="card-number">05</div>
                 <div class="img-wrapper">
                     <img src="img/una_navidad_bien_prendida.jpg" alt="Una Navidad bien Prendida" class="movie-img">
+                    <div class="img-overlay">
+                        <div class="overlay-genre">Navidad</div>
+                    </div>
                 </div>
                 <div class="movie-info">
                     <h2>Una Navidad bien Prendida</h2>
-                    <span class="time">🕒 Miércoles 24 - 12:30 PM</span>
+                    <span class="time"><span class="time-icon">🕒</span> Miércoles 24 — <strong>12:30 PM</strong></span>
                     <p class="description">Steve enfrenta un problema cuando su nuevo vecino Danny planea iluminar su casa para que sea vista desde el espacio. Le declara la guerra para no quedarse atrás.</p>
                     <button class="action-btn trailer-btn" data-trailer-url="https://www.youtube.com/watch?v=R5UvK4FhJg8" data-title="Una Navidad bien Prendida">▶ Ver Trailer</button>
                 </div>
@@ -100,8 +145,27 @@
         </div>
     </main>
 
+    <!-- Modal Trailer -->
+    <div class="modal-overlay" id="trailerModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-title">Trailer</h3>
+                <button class="modal-close" id="modalClose">✕</button>
+            </div>
+            <div class="modal-video-container">
+                <iframe id="trailerFrame" src="" frameborder="0" allowfullscreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>Proyecto Cine Familiar | Vacaciones 2026</p>
+        <div class="footer-inner">
+            <div class="footer-logo">🎬 CineFamiliar</div>
+            <p>Proyecto Cine Familiar — Vacaciones 2026</p>
+            <div class="footer-stars">★ ★ ★ ★ ★</div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
